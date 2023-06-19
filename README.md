@@ -1,6 +1,12 @@
 # simple-grip
 simple `grip-like` program that allows you to search files/directories with a specific pattern
 
+# install
+
+1. download the latest stable version from [releases](https://github.com/MrAliSalehi/simple-grip/releases/latest)
+2. build from source code:
+- `git clone https://github.com/MrAliSalehi/simple-grip`
+- `cargo build --release`
 
 # use
 ```
@@ -19,4 +25,6 @@ Options:
 
 `simple-grip /path/to/dir 'pattern\+' -s names -t 3 -d 4`
 
-will go in `/path/to/dir` and search for the files/directories that matches the `'pattern\+' ` with maximum 3 threads and `tree-depth` of 3
+with this command simple grip will go in `/path/to/dir` and search for the files/directories that matches the `'pattern\+'` with maximum 3 threads and `tree-depth` of 3.
+
+you can also `reverse` the process so any file that doesn't match the `'pattern\+'` will show up, in order to do this you can simply add the `-r` to the end of the command
