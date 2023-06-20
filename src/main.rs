@@ -10,7 +10,8 @@ mod commands;
 
 pub type MyResult = Result<(), Box<dyn std::error::Error + Send + Sync>>;
 
-fn main() -> MyResult {
+#[tokio::main]
+async fn main() -> MyResult {
     let mut config = AppCommands::parse();
     if config.max_thread == 0 {
         config.max_thread = std::thread::available_parallelism().unwrap().get();
