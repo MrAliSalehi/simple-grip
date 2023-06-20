@@ -5,10 +5,10 @@ use regex::RegexBuilder;
 use tokio::io::AsyncReadExt;
 use walkdir::WalkDir;
 use crate::commands::{AppCommands, Target};
-use crate::prelude::MyResult;
 
-mod prelude;
 mod commands;
+
+pub type MyResult = Result<(), Box<dyn std::error::Error + Send + Sync>>;
 
 fn main() -> MyResult {
     let mut config = AppCommands::parse();
