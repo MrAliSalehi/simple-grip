@@ -1,6 +1,6 @@
 use clap::{Parser, ValueEnum, ArgAction};
 
-#[derive(Parser, Debug)]
+#[derive(Parser)]
 #[clap(version)]
 pub struct AppCommands {
     #[clap(index = 1, help = "base path to search")]
@@ -22,9 +22,8 @@ pub struct AppCommands {
     pub max_depth: usize,
 }
 
-#[derive(Clone, Debug, Default, ValueEnum)]
+#[derive(Clone, ValueEnum)]
 pub enum Target {
-    #[default]
     Names,
     Contents,
 }
